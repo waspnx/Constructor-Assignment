@@ -2,6 +2,35 @@
 // Constructors
 // Only add code to *THIS* section!
 
+"use strict";
+
+var Dog = function Dog(params) {
+
+  console.log(params);
+  params = params || {};
+
+  this.status = "normal";
+  this.color = params.color;
+  this.owner = params.owner;
+  this.hungry = params.hungry !== undefined ? params.hungry : true; //ternary
+};
+
+var Human = function Human(params) {
+
+  console.log(params);
+  params = params || {};
+
+  this.cool = params.cool ? params.cool : false; //ternary
+
+  this.pet = function (dog) {
+    dog.status = "happy";
+  };
+
+  this.feed = function (dog) {
+    dog.hungry = false;
+  };
+};
+
 ///
 ///
 ///
@@ -9,8 +38,6 @@
 
 // Do not ADD or MODIFY code below this line :)
 // Dogs
-'use strict';
-
 var sadie = new Dog({
   color: 'black',
   hungry: false
